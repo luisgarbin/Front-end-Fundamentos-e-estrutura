@@ -1,47 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos - ONG Esperança Viva</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos - ONG Esperança Viva</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>ONG Esperança Viva</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="projetos">
-            <h2>Nossos Projetos Sociais</h2>
-            <article>
-                <h3>Educação para Todos</h3>
-                <p>Oferecemos oficinas de leitura e apoio escolar gratuito.</p>
-            </article>
+  <!-- Cabeçalho Principal (Flexbox) -->
+  <header class="header-container">
+    <h1>ONG Esperança Viva</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Estrutura Principal (Grid System) -->
+  <main class="container">
+    <h2>Projetos e Ações Sociais</h2>
+
+    <div class="grid-layout">
+      
+      <!-- Seção do Conteúdo Principal -->
+      <section class="main-content">
+        
+        <!-- Componente de Alerta Informativo -->
+        <div class="alert alert-success">
+          <strong>Inscrições Abertas!</strong> Participe como voluntário ou doador nos nossos projetos ativos.
+        </div>
+
+        <!-- Seção: Nossos Projetos Sociais -->
+        <section id="projetos" class="card">
+          <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-sm);">Nossos Projetos Sociais</h3>
+          
+          <article style="border-left: 4px solid var(--primary-color); padding-left: var(--spacing-md); margin-top: var(--spacing-md);">
+            <h4>Educação para Todos <span class="badge badge-primary">Ativo</span></h4>
+            <p style="margin-top: var(--spacing-xs);">Oferecemos oficinas de leitura e apoio escolar gratuito.</p>
+          </article>
+
+          <article style="border-left: 4px solid var(--secondary-color); padding-left: var(--spacing-md); margin-top: var(--spacing-md);">
+            <h4>Meio Ambiente Limpo <span class="badge badge-success">Sustentabilidade</span></h4>
+            <p style="margin-top: var(--spacing-xs);">Ações de reciclagem e reflorestamento comunitário.</p>
+          </article>
         </section>
 
-        <section id="voluntariado">
-            <h2>Seja um Voluntário</h2>
-            <ol>
-                <li>Preencha o formulário de cadastro.</li>
-                <li>Participe da reunião de integração.</li>
-            </ol>
+        <!-- Seção: Seja um Voluntário -->
+        <section id="voluntariado" class="card">
+          <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-sm);">Seja um Voluntário</h3>
+          <p style="margin-bottom: var(--spacing-md);">Siga o passo a passo abaixo para fazer parte da nossa equipa:</p>
+          
+          <ol style="padding-left: var(--spacing-lg); line-height: 1.8;">
+            <li>Preencha o formulário de cadastro.</li>
+            <li>Participe da reunião de integração.</li>
+            <li>Inicie as suas atividades no projeto escolhido!</li>
+          </ol>
         </section>
 
-        <section id="doacoes">
-            <h2>Apoie a Causa</h2>
-            <button type="button">Fazer uma Doação</button>
+        <!-- Seção: Apoie a Causa -->
+        <section id="doacoes" class="card" style="text-align: center; background-color: #e7f1ff; border-color: #b6d4fe;">
+          <h3 style="color: var(--primary-color);">Apoie a Causa</h3>
+          <p style="margin: var(--spacing-sm) 0 var(--spacing-md) 0;">
+            A sua contribuição transforma vidas e mantém os nossos projetos ativos.
+          </p>
+          <button type="button" class="btn btn-primary" style="font-size: 1.1rem; padding: var(--spacing-md) var(--spacing-lg);">
+            Fazer uma Doação
+          </button>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 ONG Esperança Viva. Todos os direitos reservados.</p>
-    </footer>
+      </section>
+
+      <!-- Barra Lateral Auxiliar -->
+      <aside class="sidebar">
+        
+        <div class="card">
+          <h3>Categorias Em Destaque</h3>
+          <p style="margin-top: var(--spacing-sm);">
+            Conheça as áreas onde atuamos:
+          </p>
+          <div style="margin-top: var(--spacing-md);">
+            <span class="badge badge-primary">Educação</span>
+            <span class="badge badge-success">Meio Ambiente</span>
+            <span class="badge badge-warning">Urgente</span>
+          </div>
+        </div>
+
+        <!-- Toast de Apoio / Notificação Flutuante -->
+        <div class="toast">
+          <span>Participe da próxima reunião!</span>
+          <span class="badge badge-success">Saber Mais</span>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: var(--spacing-lg); color: var(--neutral-medium); margin-top: var(--spacing-xl);">
+    <p>&copy; 2026 ONG Esperança Viva. Todos os direitos reservados.</p>
+  </footer>
+
 </body>
 </html>

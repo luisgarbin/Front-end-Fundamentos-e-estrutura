@@ -1,52 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - ONG Esperança Viva</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - ONG Esperança Viva</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>ONG Esperança Viva</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h2>Formulário de Cadastro</h2>
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Informações Pessoais</legend>
+  <!-- Cabeçalho Principal (Flexbox) -->
+  <header class="header-container">
+    <h1>ONG Esperança Viva</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Estrutura Principal (Grid System) -->
+  <main class="container">
+    <h2>Formulário de Cadastro</h2>
+
+    <div class="grid-layout">
+      
+      <!-- Seção do Formulário Principal -->
+      <section class="main-content">
+        
+        <!-- Componentes de Feedback/Alerta -->
+        <div class="alert alert-success">
+          <strong>Atenção:</strong> Preencha os campos abaixo com os seus dados corretos.
+        </div>
+
+        <div class="card">
+          <form action="#" method="post">
+            
+            <!-- Grupo 1: Informações Pessoais -->
+            <fieldset style="border: 1px solid var(--neutral-medium); border-radius: 6px; padding: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+              <legend style="padding: 0 var(--spacing-xs); font-weight: 600; color: var(--primary-color);">Informações Pessoais</legend>
+              
+              <div class="form-group">
                 <label for="nome">Nome completo:</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="nome" class="form-control is-valid" value="Maria Silva" required>
+              </div>
 
+              <div class="form-group">
                 <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required>
+                <input type="text" id="cpf" name="cpf" class="form-control is-valid" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" value="123.456.789-00" required>
+              </div>
             </fieldset>
 
-            <fieldset>
-                <legend>Contato e Endereço</legend>
+            <!-- Grupo 2: Contato e Endereço -->
+            <fieldset style="border: 1px solid var(--neutral-medium); border-radius: 6px; padding: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+              <legend style="padding: 0 var(--spacing-xs); font-weight: 600; color: var(--primary-color);">Contato e Endereço</legend>
+              
+              <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" class="form-control is-valid" value="maria.silva@email.com" required>
+              </div>
 
+              <div class="form-group">
                 <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" placeholder="(00) 00000-0000" required>
+                <input type="tel" id="telefone" name="telefone" class="form-control" pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" placeholder="(00) 00000-0000" required>
+              </div>
 
+              <div class="form-group">
                 <label for="cep">CEP:</label>
-                <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="00000-000" required>
+                <input type="text" id="cep" name="cep" class="form-control is-invalid" pattern="\d{5}-\d{3}" placeholder="00000-000" required>
+                <small style="color: var(--danger-color); font-size: var(--font-size-small); margin-top: 4px; display: block;">
+                  Por favor, insira o CEP no formato correto (ex: 00000-000).
+                </small>
+              </div>
             </fieldset>
 
-            <button type="submit">Enviar Cadastro</button>
-        </form>
-    </main>
+            <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+          </form>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 ONG Esperança Viva. Todos os direitos reservados.</p>
-    </footer>
+      </section>
+
+      <!-- Barra Lateral Auxiliar -->
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Tipos de Cadastro</h3>
+          <p style="margin-top: var(--spacing-sm);">
+            Escolha a sua forma de atuação na ONG:
+          </p>
+          <div style="margin-top: var(--spacing-md);">
+            <span class="badge badge-primary">Voluntário</span>
+            <span class="badge badge-success">Doador</span>
+            <span class="badge badge-warning">Apoiador</span>
+          </div>
+        </div>
+
+        <!-- Toast de Apoio -->
+        <div class="toast">
+          <span>Precisa de suporte?</span>
+          <span class="badge badge-primary">Ajuda</span>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: var(--spacing-lg); color: var(--neutral-medium); margin-top: var(--spacing-xl);">
+    <p>&copy; 2026 ONG Esperança Viva. Todos os direitos reservados.</p>
+  </footer>
+
 </body>
 </html>
