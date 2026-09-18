@@ -1,49 +1,76 @@
-<!-- ========================================================= -->
-<!-- ARQUIVO: index.html                                       -->
-<!-- ========================================================= -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONG Esperança Viva - Página Inicial</title>
-    <style>
-        img { max-width: 100%; width: 400px; height: auto; border-radius: 8px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONG Esperança Viva - Painel Principal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>ONG Esperança Viva</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="sobre">
-            <h2>Sobre a Nossa Organização</h2>
-            <p>Trabalhamos para transformar vidas através da inclusão social, apoio comunitário e projetos educacionais.</p>
-            <figure>
-                <img src="assets/images/projetos-sociais.jpg" alt="Voluntários da ONG sorrindo enquanto entregam doações de livros para crianças da comunidade.">
-                <figcaption>Ação voluntária de incentivo à leitura na comunidade.</figcaption>
-            </figure>
-        </section>
+  <header class="header-container">
+    <h1>ONG Esperança Viva</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section id="contato">
-            <h2>Fale Conosco</h2>
-            <ul>
-                <li><strong>E-mail:</strong> contato@esperancaviva.org.br</li>
-                <li><strong>Telefone:</strong> (11) 99999-8888</li>
-            </ul>
-        </section>
-    </main>
+  <main class="container">
+    <h2>Painel da Organização</h2>
 
-    <footer>
-        <p>&copy; 2026 ONG Esperança Viva. Todos os direitos reservados.</p>
-    </footer>
+    <div class="grid-layout">
+      
+      <!-- Conteúdo Principal -->
+      <section class="main-content">
+        
+        <!-- Componentes de Alerta -->
+        <div class="alert alert-success">
+          <strong>Sucesso!</strong> O seu cadastro foi efetuado com sucesso no sistema.
+        </div>
+        <div class="alert alert-danger">
+          <strong>Atenção:</strong> Existem campos obrigatórios por preencher abaixo.
+        </div>
+
+        <!-- Formulário com Validação -->
+        <div class="card">
+          <h3>Formulário de Voluntariado</h3>
+          <form style="margin-top: 1rem;">
+            <div class="form-group">
+              <label for="nome">Nome Completo:</label>
+              <input type="text" id="nome" class="form-control is-valid" value="Maria Silva">
+            </div>
+            <button type="button" class="btn btn-primary">Enviar Inscrição</button>
+          </form>
+        </div>
+
+      </section>
+
+      <!-- Sidebar com Badges e Toast -->
+      <aside class="sidebar">
+        
+        <div class="card">
+          <h3>Categorias de Projetos</h3>
+          <p style="margin-top: 0.5rem;">
+            <span class="badge badge-primary">Educação</span>
+            <span class="badge badge-success">Meio Ambiente</span>
+            <span class="badge badge-warning">Urgente</span>
+          </p>
+        </div>
+
+        <!-- Componente Toast (Notificação Flutuante) -->
+        <div class="toast">
+          <span>Nova doação recebida há 5 min!</span>
+          <span class="badge badge-success">Ver</span>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
 </body>
 </html>
